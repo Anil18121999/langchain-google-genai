@@ -116,8 +116,8 @@ class GenAIAqa(RunnableSerializable[AqaInput, AqaOutput]):
         super().__init__(**kwargs)
         self._client = _AqaModel(**kwargs)
 
-    def invoke(
-        self, input: AqaInput, config: Optional[RunnableConfig] = None, **kwargs: Any
+    def invoke(  # type: ignore[override]
+        self, input: AqaInput, config: Optional[RunnableConfig] = None
     ) -> AqaOutput:
         """Generates a grounded response using the provided passages."""
 
